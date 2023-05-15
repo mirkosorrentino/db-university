@@ -1,0 +1,21 @@
+1
+SELECT YEAR(enrolment_date) as "Anno", COUNT(students.id) AS "Iscritti"
+FROM students
+GROUP BY YEAR(enrolment_date);
+
+2
+SELECT teachers.office_address, COUNT(teachers.id) AS "Num_Insegnanti"
+FROM teachers
+GROUP BY teachers.office_address;
+
+3
+SELECT exam_student.exam_id, AVG(exam_student.vote)
+FROM exam_student
+GROUP BY exam_student.exam_id;
+
+4
+SELECT departments.name, COUNT(degrees.id) AS "Corsi_di_laurea"
+FROM departments
+JOIN degrees
+ON departments.id = degrees.department_id
+GROUP BY departments.id;
